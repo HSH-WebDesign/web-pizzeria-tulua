@@ -1,0 +1,85 @@
+---
+import { languages } from "@i18n/ui";
+
+export type Language = keyof typeof languages;
+
+interface Props {
+  title: string;
+  description: string;
+  lang: Language;
+  keywords?: string;
+  image?: string;
+  canonicalPath?: string;
+}
+
+const { title, description, lang, keywords, image, canonicalPath = "" } = Astro.props;
+
+const SITE_URL = Astro.site?.toString() || "https://example.com";
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
+
+// Canonical URL
+const canonical = `${SITE_URL}${canonicalPath}`;
+
+// Generate alternate URLs for all languages
+const alternateUrls = Object.keys(languages).map((locale) => {
+  const path = canonicalPath.replace(`/${lang}`, `/${locale}`);
+  return {
+    lang: locale,
+    url: `${SITE_URL}${path}`,
+  };
+});
+
+// Add x-default for SEO
+alternateUrls.push({
+  lang: "x-default",
+  url: `${SITE_URL}${canonicalPath.replace(`/${lang}`, `/en`)}`,
+});
+
+const ogImage = image || DEFAULT_IMAGE;
+---
+
+<head>
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- SEO Meta Tags -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  {keywords && <meta name="keywords" content={keywords} />}
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content={lang} />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonical} />
+
+  <!-- Alternate URLs for i18n -->
+  {
+    alternateUrls.map((alternate) => (
+      <link rel="alternate" hreflang={alternate.lang} href={alternate.url} />
+    ))
+  }
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:locale" content={lang} />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonical} />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Sitemap -->
+  <link rel="sitemap" href="/sitemap-index.xml" />
+</head>

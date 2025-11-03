@@ -1,0 +1,14 @@
+@theme {
+  /* HSH Brand Colors */
+  --color-hsh-black: #222222;
+  --color-hsh-white: #ffffff;
+  --color-hsh-white-soft: #f5f5f5;
+  --color-hsh-black-soft: #292828;
+  --color-hsh-purple: #8C6B91;
+  --color-hsh-orange: #FE9F06;
+  --color-hsh-blue-dark: #383D5C;
+  --color-hsh-gray: #6b6b6b;
+  --color-hsh-green-dark: #42584C;
+  --color-hsh-red-dark: #883529;
+  --color-hsh-zyan: #125F74;
+}

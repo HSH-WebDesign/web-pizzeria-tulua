@@ -1,0 +1,33 @@
+---
+import BaseHeadLayout from "@ui/_shared/layouts/BaseHeadLayout.astro";
+import { languages } from "@i18n/ui";
+import "@ui/styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  lang: keyof typeof languages;
+  keywords?: string;
+  image?: string;
+  canonicalPath?: string;
+}
+
+const { title, description, lang, keywords, image, canonicalPath } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <BaseHeadLayout
+    title={title}
+    lang={lang}
+    description={description}
+    keywords={keywords}
+    image={image}
+    canonicalPath={canonicalPath}
+  />
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
