@@ -1,6 +1,16 @@
 ---
-import { defaultLang } from "@i18n/ui";
+import HomePageLayout from "@ui/home/layout/HomePageLayout.astro";
 
-// Redirect to default language
-return Astro.redirect(`/${defaultLang}/`);
+const title = "HugoPizzas - Mejores Pizza en Tulua";
+const description = "Descubre la mejor pizza de Tulua. Hecha con amor, tradición y al mejor precio. ¡Pide ahora!";
+const keywords = "pizza, pizzería, italiana, Tulua, comida italiana, restaurante, horno de leña, delivery, HugoPizzas";
 ---
+
+<HomePageLayout
+  title={title}
+  description={description}
+  lang="es"
+  keywords={keywords}
+  canonicalPath="/"
+  whatsappPhone="34123456789"
+/>

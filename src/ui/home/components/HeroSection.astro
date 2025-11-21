@@ -9,6 +9,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const baseUrl = lang === 'es' ? '' : `/${lang}`;
 ---
 
 <section
@@ -34,7 +35,7 @@ const t = useTranslations(lang);
       {t("hero.subtitle")}
     </p>
     <Button
-      href={`/${lang}/#menu`}
+      href={`${baseUrl}/#menu`}
       variant="primary"
       size="lg"
       class="animate-fade-in-up animation-delay-400"

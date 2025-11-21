@@ -8,11 +8,12 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const baseUrl = lang === 'es' ? '' : `/${lang}`;
 ---
 
 <header class="fixed w-full top-0 z-1000 bg-black/90 backdrop-blur-[10px] py-4">
   <nav class="max-w-[1200px] mx-auto flex justify-between items-center px-8">
-    <a href={`/${lang}/`} class="flex items-center gap-3 no-underline">
+    <a href={`${baseUrl}/`} class="flex items-center gap-3 no-underline">
       <img
         src="/logo.png"
         alt={t("brand.name")}
@@ -23,7 +24,7 @@ const t = useTranslations(lang);
     <ul class="flex gap-8 list-none md:flex">
       <li>
         <a
-          href={`/${lang}/#home`}
+          href={`${baseUrl}/#home`}
           class="text-white no-underline transition-colors duration-300 font-medium hover:text-primary"
         >
           {t("nav.home")}
@@ -31,7 +32,7 @@ const t = useTranslations(lang);
       </li>
       <li>
         <a
-          href={`/${lang}/#menu`}
+          href={`${baseUrl}/#menu`}
           class="text-white no-underline transition-colors duration-300 font-medium hover:text-primary"
         >
           {t("nav.menu")}
@@ -39,7 +40,7 @@ const t = useTranslations(lang);
       </li>
       <li>
         <a
-          href={`/${lang}/#contact`}
+          href={`${baseUrl}/#contact`}
           class="text-white no-underline transition-colors duration-300 font-medium hover:text-primary"
         >
           {t("nav.contact")}
