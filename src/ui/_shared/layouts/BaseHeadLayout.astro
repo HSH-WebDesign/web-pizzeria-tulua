@@ -14,8 +14,8 @@ interface Props {
 
 const { title, description, lang, keywords, image, canonicalPath = "" } = Astro.props;
 
-const SITE_URL = Astro.site?.toString() || "https://example.com";
-const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
+const SITE_URL = Astro.site?.toString() || "https://hugopizza.com";
+const DEFAULT_IMAGE = `${SITE_URL}/logo.png`;
 
 // Canonical URL
 const canonical = `${SITE_URL}${canonicalPath}`;
