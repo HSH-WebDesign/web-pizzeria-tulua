@@ -1,0 +1,89 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary';
+  size?: 'md' | 'lg';
+  class?: string;
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'lg',
+  class: className = ''
+} = Astro.props;
+
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag
+  href={href}
+  class:list={[
+    "button-base",
+    `button-${variant}`,
+    `button-${size}`,
+    className
+  ]}
+>
+  <slot />
+</Tag>
+
+<style>
+  .button-base {
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border: none;
+  }
+
+  .button-base:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  .button-primary {
+    background-color: #ff6b35;
+    color: white;
+  }
+
+  .button-primary:hover {
+    background-color: #ff8555;
+    box-shadow: 0 20px 40px -8px rgba(255, 107, 53, 0.5);
+  }
+
+  .button-secondary {
+    background-color: white;
+    color: #ff6b35;
+  }
+
+  .button-secondary:hover {
+    background-color: #f9fafb;
+    box-shadow: 0 20px 40px -8px rgba(255, 107, 53, 0.3);
+  }
+
+  .button-md {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+  }
+
+  .button-lg {
+    padding: 1.25rem 3rem;
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .button-md {
+      padding: 1.25rem 3rem;
+      font-size: 1.25rem;
+    }
+
+    .button-lg {
+      padding: 1.5rem 4rem;
+      font-size: 1.5rem;
+    }
+  }
+</style>

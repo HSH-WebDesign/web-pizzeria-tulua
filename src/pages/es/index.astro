@@ -1,22 +1,16 @@
 ---
-import BaseLayout from "@ui/_shared/layouts/BaseLayout.astro";
-import { useTranslations } from "@i18n/utils";
+import HomePageLayout from "@ui/home/layout/HomePageLayout.astro";
 
-const t = useTranslations('es');
+const title = "HugoPizzas - Auténtica Pizza Italiana en Tulua";
+const description = "Descubre la mejor pizza italiana en Tulua. Hecha con amor, tradición y los mejores ingredientes importados de Italia. ¡Pide ahora!";
+const keywords = "pizza, pizzería, italiana, Tulua, comida italiana, restaurante, horno de leña, delivery, HugoPizzas";
 ---
 
-<BaseLayout
-  title={t('site.title')}
-  description={t('site.description')}
+<HomePageLayout
+  title={title}
+  description={description}
   lang="es"
+  keywords={keywords}
   canonicalPath="/es/"
->
-  <div class="container mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold text-center mb-8">
-      {t('site.title')}
-    </h1>
-    <p class="text-center text-lg">
-      {t('site.description')}
-    </p>
-  </div>
-</BaseLayout>
+  whatsappPhone="34123456789"
+/>

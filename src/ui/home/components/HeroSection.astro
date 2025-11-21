@@ -1,0 +1,45 @@
+---
+import { useTranslations } from "@i18n/utils";
+import type { languages } from "@i18n/ui";
+import Button from "@ui/_shared/components/Button.astro";
+
+interface Props {
+  lang: keyof typeof languages;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section
+  id="home"
+  class="min-h-screen h-screen bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200')] bg-center bg-cover flex items-center justify-center text-center text-white px-4 md:px-8"
+>
+  <div class="hero-content max-w-5xl mx-auto">
+    <div class="mb-6 md:mb-8 animate-fade-in-up">
+      <img
+        src="/logo.png"
+        alt={t("brand.name")}
+        class="w-72 h-72 mx-auto mb-4 object-contain"
+      />
+    </div>
+    <h1
+      class="text-4xl md:text-5xl lg:text-7xl mb-4 md:mb-6 animate-fade-in-up font-bold leading-tight uppercase"
+    >
+      {t("hero.title")}
+    </h1>
+    <p
+      class="text-xl md:text-2xl lg:text-3xl mb-8 md:mb-10 animate-fade-in-up animation-delay-200 max-w-3xl mx-auto"
+    >
+      {t("hero.subtitle")}
+    </p>
+    <Button
+      href={`/${lang}/#menu`}
+      variant="primary"
+      size="lg"
+      class="animate-fade-in-up animation-delay-400"
+    >
+      {t("hero.cta")}
+    </Button>
+  </div>
+</section>

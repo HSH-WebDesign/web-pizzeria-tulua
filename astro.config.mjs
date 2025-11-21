@@ -14,11 +14,10 @@ export default defineConfig({
     sitemap({
       lastmod: new Date(),
       i18n: {
-        defaultLocale: "en",
+        defaultLocale: "es",
         locales: {
-          en: "en",
           es: "es",
-          fr: "fr",
+          en: "en",
         },
       },
     }),
@@ -34,8 +33,8 @@ export default defineConfig({
     }),
   ],
   i18n: {
-    defaultLocale: "en",
-    locales: ["es", "en", "fr"],
+    defaultLocale: "es",
+    locales: ["es", "en"],
     routing: {
       prefixDefaultLocale: true,
       redirectToDefaultLocale: true,

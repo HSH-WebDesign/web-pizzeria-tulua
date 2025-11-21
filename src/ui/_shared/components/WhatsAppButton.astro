@@ -1,0 +1,25 @@
+---
+import { useTranslations } from "@i18n/utils";
+import type { languages } from "@i18n/ui";
+
+interface Props {
+  lang: keyof typeof languages;
+  phone?: string;
+}
+
+const { lang, phone = "34123456789" } = Astro.props;
+const t = useTranslations(lang);
+
+const whatsappMessage = encodeURIComponent(t('whatsapp.message'));
+const whatsappUrl = `https://wa.me/${phone}?text=${whatsappMessage}`;
+---
+
+<a
+  href={whatsappUrl}
+  class="whatsapp-float fixed w-[60px] h-[60px] bottom-[30px] right-[30px] bg-[#25d366] text-white rounded-[50px] text-center text-[30px] shadow-[2px_2px_15px_rgba(0,0,0,0.3)] z-[1000] flex items-center justify-center no-underline transition-all duration-300 ease-in-out animate-pulse-whatsapp hover:bg-[#20ba5a] hover:scale-110 hover:shadow-[2px_2px_25px_rgba(37,211,102,0.5)] md:w-[60px] md:h-[60px] md:bottom-[30px] md:right-[30px] md:text-[30px] max-md:w-[50px] max-md:h-[50px] max-md:bottom-[20px] max-md:right-[20px] max-md:text-[25px]"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Contactar por WhatsApp"
+>
+  💬
+</a>

@@ -1,0 +1,57 @@
+---
+import { useTranslations } from "@i18n/utils";
+import type { languages } from "@i18n/ui";
+
+interface Props {
+  lang: keyof typeof languages;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  id="contact"
+  class="bg-footer-bg text-white py-12 md:py-16 px-4 md:px-8 text-center"
+>
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-wrap justify-center gap-8 md:gap-16 mb-8 md:mb-12">
+      <div class="footer-section">
+        <h3 class="text-primary mb-4 md:mb-6 text-xl md:text-2xl font-semibold">
+          {t("footer.schedule.title")}
+        </h3>
+        <p class="text-light-gray mb-2 text-sm md:text-base">
+          {t("footer.schedule.weekday")}
+        </p>
+        <p class="text-light-gray mb-2 text-sm md:text-base">
+          {t("footer.schedule.weekend")}
+        </p>
+        <p class="text-light-gray mb-2 text-sm md:text-base">
+          {t("footer.schedule.sunday")}
+        </p>
+      </div>
+
+      <div class="footer-section">
+        <h3 class="text-primary mb-4 md:mb-6 text-xl md:text-2xl font-semibold">
+          {t("footer.contact.title")}
+        </h3>
+        <p class="text-light-gray mb-2 text-sm md:text-base">
+          📍 {t("footer.address")}
+        </p>
+        <p class="text-light-gray mb-2 text-sm md:text-base">
+          📞 {t("footer.phone")}
+        </p>
+        <p class="text-light-gray mb-2 text-sm md:text-base">
+          ✉️ {t("footer.email")}
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="mt-8 pt-8 border-t border-[#333] text-[#888] text-sm md:text-base"
+    >
+      <p>{t("footer.copyright", { year: currentYear })}</p>
+    </div>
+  </div>
+</footer>

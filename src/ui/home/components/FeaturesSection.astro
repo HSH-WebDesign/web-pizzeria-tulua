@@ -1,0 +1,47 @@
+---
+import { useTranslations } from "@i18n/utils";
+import type { languages } from "@i18n/ui";
+import FeatureCard from "./FeatureCard.astro";
+
+interface Props {
+  lang: keyof typeof languages;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="py-8 px-4 md:px-8 bg-dark text-white">
+  <div class="flex flex-col gap-4 items-center">
+    <h2
+      class="text-center text-3xl md:text-4xl lg:text-5xl font-bold uppercase"
+    >
+      {t("features.title")}
+    </h2>
+
+    <div
+      class="flex flex-wrap justify-center gap-8 p-5 md:gap-12 max-w-8xl mx-auto"
+    >
+      <FeatureCard
+        icon="🔥"
+        title={t("features.oven.title")}
+        description={t("features.oven.desc")}
+      />
+      <FeatureCard
+        icon="🇮🇹"
+        title={t("features.ingredients.title")}
+        description={t("features.ingredients.desc")}
+      />
+      <FeatureCard
+        icon="👨‍🍳"
+        title={t("features.chefs.title")}
+        description={t("features.chefs.desc")}
+      />
+      <FeatureCard
+        icon="⚡"
+        title={t("features.fast.title")}
+        description={t("features.fast.desc")}
+      />
+    </div>
+  </div>
+</section>

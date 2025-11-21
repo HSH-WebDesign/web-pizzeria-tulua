@@ -1,0 +1,39 @@
+---
+import { useTranslations } from "@i18n/utils";
+import type { languages } from "@i18n/ui";
+import { pizzas } from "@ui/constants/pizzas";
+import MenuCard from "./MenuCard.astro";
+
+interface Props {
+  lang: keyof typeof languages;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="menu" class="py-10 px-4 md:px-8 bg-white w-full">
+  <div>
+    <h2 class="text-center text-3xl md:text-4xl lg:text-5xl mb-4 font-bold uppercase">
+      {t('menu.title')}
+    </h2>
+    <p class="text-center text-lg md:text-xl mb-12 md:mb-16">
+      {t('menu.subtitle')}
+    </p>
+
+    <div class="flex justify-center w-full">
+      <div class="flex flex-wrap justify-center gap-8 lg:gap-12 max-w-7xl">
+        {
+          pizzas.map((pizza) => (
+            <MenuCard
+              name={pizza.name[lang]}
+              description={pizza.description[lang]}
+              price={pizza.price}
+              image={pizza.image}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

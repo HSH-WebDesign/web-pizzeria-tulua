@@ -1,14 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #ff6b35;
+  --color-primary-hover: #ff8555;
+  --color-dark: #2c2c2c;
+  --color-light-gray: #ccc;
+  --color-medium-gray: #666;
+  --color-footer-bg: #1a1a1a;
+  --color-footer-border: #333;
+}
+
 @import "@ui/styles/variables.css";
 
 html {
   scroll-behavior: smooth;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -16,4 +21,44 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease both;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animate-pulse-whatsapp {
+  animation: pulse-whatsapp 2s infinite;
 }

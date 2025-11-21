@@ -1,0 +1,52 @@
+---
+import BaseLayout from "@ui/_shared/layouts/BaseLayout.astro";
+import Header from "@ui/_shared/components/Header.astro";
+import Footer from "@ui/_shared/components/Footer.astro";
+import WhatsAppButton from "@ui/_shared/components/WhatsAppButton.astro";
+import HeroSection from "@ui/home/components/HeroSection.astro";
+import MenuSection from "@ui/home/components/MenuSection.astro";
+import FeaturesSection from "@ui/home/components/FeaturesSection.astro";
+import CTASection from "@ui/home/components/CTASection.astro";
+import { languages } from "@i18n/ui";
+
+interface Props {
+  title: string;
+  description: string;
+  lang: keyof typeof languages;
+  keywords?: string;
+  image?: string;
+  canonicalPath?: string;
+  whatsappPhone?: string;
+}
+
+const {
+  title,
+  description,
+  lang,
+  keywords,
+  image,
+  canonicalPath,
+  whatsappPhone
+} = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang={lang}
+  keywords={keywords}
+  image={image}
+  canonicalPath={canonicalPath}
+>
+  <!-- <Header lang={lang} /> -->
+
+  <main>
+    <HeroSection lang={lang} />
+    <MenuSection lang={lang} />
+    <FeaturesSection lang={lang} />
+    <CTASection lang={lang} />
+  </main>
+
+  <Footer lang={lang} />
+  <WhatsAppButton lang={lang} phone={whatsappPhone} />
+</BaseLayout>

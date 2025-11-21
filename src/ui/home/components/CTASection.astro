@@ -1,0 +1,30 @@
+---
+import { useTranslations } from "@i18n/utils";
+import type { languages } from "@i18n/ui";
+import Button from "@ui/_shared/components/Button.astro";
+
+interface Props {
+  lang: keyof typeof languages;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-br from-[#ff6b35] to-[#ff8555] text-white text-center">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6 font-bold">
+      {t('cta.title')}
+    </h2>
+    <p class="text-lg md:text-xl lg:text-2xl mb-8 md:mb-10 max-w-2xl mx-auto">
+      {t('cta.subtitle')}
+    </p>
+    <Button
+      href="#"
+      variant="secondary"
+      size="lg"
+    >
+      {t('cta.button')}
+    </Button>
+  </div>
+</section>
