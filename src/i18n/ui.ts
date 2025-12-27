@@ -7,6 +7,11 @@ export const defaultLang = 'es';
 
 export const ui = {
   es: {
+    // SEO
+    'seo.title': 'Las Mejores Pizzas de Tuluá, Colombia | HugoPizzas',
+    'seo.description': 'Descubre las mejores pizzas de Tuluá. Pizza al horno de leña con ingredientes frescos. A domicilio en Tuluá. ¡Ordena ya y disfruta del auténtico sabor de la pizza en Colombia!',
+    'seo.keywords': 'pizzas Tuluá, pizzería Tuluá Colombia, mejor pizza Tuluá, pizza artesanal Tuluá, pizza a domicilio Tuluá, restaurante italiano Tuluá, pizza horno de leña Tuluá, HugoPizzas, comida italiana Valle del Cauca, delivery pizza Tuluá, pizzería centro Tuluá',
+
     // Navigation
     'nav.home': 'Inicio',
     'nav.about': 'Nosotros',
@@ -56,6 +61,11 @@ export const ui = {
     'whatsapp.message': 'Hola, me gustaría hacer un pedido',
   },
   en: {
+    // SEO
+    'seo.title': 'Best Pizzas in Tuluá, Colombia | HugoPizzas',
+    'seo.description': 'Discover the best artisan pizzas in Tuluá, Valle del Cauca, Colombia. Wood-fired pizza with fresh ingredients. Home delivery in Tuluá. Order now and enjoy authentic Italian flavor in Colombia!',
+    'seo.keywords': 'pizzas Tuluá, pizzeria Tuluá Colombia, best pizza Tuluá, artisan pizza Tuluá, pizza delivery Tuluá, Italian restaurant Tuluá, wood fired pizza Tuluá, HugoPizzas, Italian food Valle del Cauca, pizza delivery Tuluá',
+
     // Navigation
     'nav.home': 'Home',
     'nav.about': 'About',

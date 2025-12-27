@@ -2,11 +2,22 @@
 interface Props {
   name: string;
   description: string;
-  price: number;
+  priceWhole: number;
+  priceSlice: number;
   image: string;
 }
 
-const { name, description, price, image } = Astro.props;
+const { name, description, priceWhole, priceSlice, image } = Astro.props;
+
+// Formatear precios en pesos colombianos
+const formatPrice = (price: number) => {
+  return new Intl.NumberFormat('es-CO', {
+    style: 'currency',
+    currency: 'COP',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(price);
+};
 ---
 
 <div
@@ -21,12 +32,18 @@ const { name, description, price, image } = Astro.props;
   </div>
 
   <div class="p-6 md:p-8">
-    <div class="flex justify-between items-start gap-4 mb-4">
-      <h3 class="text-2xl text-dark font-semibold flex-1 uppercase">{name}</h3>
-      <span
-        class="text-2xl text-primary font-bold whitespace-nowrap uppercase text-center"
-        >{price.toFixed(2)}€</span
-      >
+    <div class="mb-4">
+      <h3 class="text-2xl text-dark font-semibold uppercase mb-3">{name}</h3>
+      <div class="flex flex-col gap-2">
+        <div class="flex justify-between items-center">
+          <span class="text-sm text-medium-gray font-medium">Pizza Completa:</span>
+          <span class="text-xl text-primary font-bold">{formatPrice(priceWhole)}</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-sm text-medium-gray font-medium">Por Porción:</span>
+          <span class="text-lg text-primary font-semibold">{formatPrice(priceSlice)}</span>
+        </div>
+      </div>
     </div>
     <p class="text-medium-gray leading-relaxed text-md md:text-base">
       {description}

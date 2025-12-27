@@ -26,9 +26,10 @@ const t = useTranslations(lang);
         {
           pizzas.map((pizza) => (
             <MenuCard
-              name={pizza.name[lang]}
-              description={pizza.description[lang]}
-              price={pizza.price}
+              name={pizza.name}
+              description={pizza.description}
+              priceWhole={pizza.priceWhole}
+              priceSlice={pizza.priceSlice}
               image={pizza.image}
             />
           ))

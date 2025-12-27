@@ -1,16 +1,17 @@
 ---
 import HomePageLayout from "@ui/home/layout/HomePageLayout.astro";
+import { useTranslations } from "@i18n/utils";
+import { CONTACT_INFO } from "@ui/constants/contact";
 
-const title = "HugoPizzas - Mejores Pizza en Tulua";
-const description = "Descubre la mejor pizza de Tulua. Hecha con amor, tradición y al mejor precio. ¡Pide ahora!";
-const keywords = "pizza, pizzería, italiana, Tulua, comida italiana, restaurante, horno de leña, delivery, HugoPizzas";
+const lang = "es";
+const t = useTranslations(lang);
 ---
 
 <HomePageLayout
-  title={title}
-  description={description}
-  lang="es"
-  keywords={keywords}
+  title={t('seo.title')}
+  description={t('seo.description')}
+  lang={lang}
+  keywords={t('seo.keywords')}
   canonicalPath="/"
-  whatsappPhone="34123456789"
+  whatsappPhone={CONTACT_INFO.whatsappPhone}
 />
