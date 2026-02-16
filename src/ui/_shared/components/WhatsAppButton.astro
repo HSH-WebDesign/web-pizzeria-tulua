@@ -7,7 +7,7 @@ interface Props {
   phone?: string;
 }
 
-const { lang, phone = "34123456789" } = Astro.props;
+const { lang, phone = "573188326497" } = Astro.props;
 const t = useTranslations(lang);
 
 const whatsappMessage = encodeURIComponent(t('whatsapp.message'));

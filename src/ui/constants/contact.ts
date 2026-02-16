@@ -1,6 +1,6 @@
 export const CONTACT_INFO = {
-  whatsappPhone: '573123456789', // Formato: código país + número sin espacios ni símbolos
-  phone: '+57 312 345 6789',
+  whatsappPhone: '573188326497', // Formato: código país + número sin espacios ni símbolos
+  phone: '+57 318 832 6497',
   email: 'info@hugopizzas.com',
-  address: 'Calle Principal, 123, Tuluá, Valle del Cauca',
+  address: 'Calle 26 casa 16 28, Barrio Las Delicias, Tuluá, Valle del Cauca',
 } as const;

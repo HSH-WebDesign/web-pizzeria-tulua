@@ -45,12 +45,12 @@ export const ui = {
 
     // Footer
     'footer.schedule.title': 'Horario',
-    'footer.schedule.weekday': 'Lunes - Jueves: 12:00 - 23:00',
-    'footer.schedule.weekend': 'Viernes - Sábado: 12:00 - 00:00',
-    'footer.schedule.sunday': 'Domingo: 12:00 - 23:00',
+    'footer.schedule.weekday': 'Todos los días: 3:00 PM - 12:00 AM',
+    'footer.schedule.weekend': '',
+    'footer.schedule.sunday': '',
     'footer.contact.title': 'Contacto',
-    'footer.address': 'Calle Principal, 123',
-    'footer.phone': '+34 123 456 789',
+    'footer.address': 'Calle 26 casa 16 28, Barrio Las Delicias',
+    'footer.phone': '+57 318 832 6497',
     'footer.email': 'info@hugopizzas.com',
     'footer.copyright': '© {{year}} HugoPizzas. Todos los derechos reservados.',
 
@@ -99,12 +99,12 @@ export const ui = {
 
     // Footer
     'footer.schedule.title': 'Schedule',
-    'footer.schedule.weekday': 'Monday - Thursday: 12:00 - 23:00',
-    'footer.schedule.weekend': 'Friday - Saturday: 12:00 - 00:00',
-    'footer.schedule.sunday': 'Sunday: 12:00 - 23:00',
+    'footer.schedule.weekday': 'Every day: 3:00 PM - 12:00 AM',
+    'footer.schedule.weekend': '',
+    'footer.schedule.sunday': '',
     'footer.contact.title': 'Contact',
-    'footer.address': 'Main Street, 123',
-    'footer.phone': '+34 123 456 789',
+    'footer.address': 'Calle 26 casa 16 28, Las Delicias',
+    'footer.phone': '+57 318 832 6497',
     'footer.email': 'info@hugopizzas.com',
     'footer.copyright': '© {{year}} HugoPizzas. All rights reserved.',
 
