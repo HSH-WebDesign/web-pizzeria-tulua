@@ -29,18 +29,18 @@ export const ui = {
 
     // Features Section
     'features.title': '¿Por qué elegirnos?',
-    'features.oven.title': 'Horno de Leña',
-    'features.oven.desc': 'Pizza tradicional cocinada en horno de leña a 450°C, como en Nápoles',
+    'features.oven.title': 'Horno de Gas',
+    'features.oven.desc': 'Pizza cocinada en horno de gas a alta temperatura para un sabor perfecto',
     'features.ingredients.title': 'Ingredientes Italianos',
     'features.ingredients.desc': 'Importamos los mejores productos directamente desde Italia',
     'features.chefs.title': 'Maestros Pizzaiolos',
     'features.chefs.desc': 'Nuestro equipo tiene años de experiencia en la auténtica pizza napolitana',
     'features.fast.title': 'Servicio Rápido',
-    'features.fast.desc': 'Tu pizza lista en 15 minutos o la próxima es gratis',
+    'features.fast.desc': 'Tu pizza lista en 15 minutos',
 
     // CTA Section
     'cta.title': '¿Listo para probar la mejor pizza?',
-    'cta.subtitle': 'Haz tu pedido ahora y disfruta de un 10% de descuento en tu primera orden',
+    'cta.subtitle': '',
     'cta.button': 'Pedir Ahora',
 
     // Footer
@@ -83,18 +83,18 @@ export const ui = {
 
     // Features Section
     'features.title': 'Why choose us?',
-    'features.oven.title': 'Wood-Fired Oven',
-    'features.oven.desc': 'Traditional pizza cooked in a wood-fired oven at 450°C, just like in Naples',
+    'features.oven.title': 'Gas Oven',
+    'features.oven.desc': 'Pizza cooked in a gas oven at high temperature for perfect flavor',
     'features.ingredients.title': 'Italian Ingredients',
     'features.ingredients.desc': 'We import the finest products directly from Italy',
     'features.chefs.title': 'Master Pizzaiolos',
     'features.chefs.desc': 'Our team has years of experience in authentic Neapolitan pizza',
     'features.fast.title': 'Fast Service',
-    'features.fast.desc': 'Your pizza ready in 15 minutes or the next one is free',
+    'features.fast.desc': 'Your pizza ready in 15 minutes',
 
     // CTA Section
     'cta.title': 'Ready to try the best pizza?',
-    'cta.subtitle': 'Order now and enjoy a 10% discount on your first order',
+    'cta.subtitle': '',
     'cta.button': 'Order Now',
 
     // Footer

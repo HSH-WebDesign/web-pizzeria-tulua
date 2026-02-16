@@ -4,13 +4,17 @@ interface Props {
   variant?: 'primary' | 'secondary';
   size?: 'md' | 'lg';
   class?: string;
+  target?: string;
+  rel?: string;
 }
 
 const {
   href,
   variant = 'primary',
   size = 'lg',
-  class: className = ''
+  class: className = '',
+  target,
+  rel
 } = Astro.props;
 
 const Tag = href ? 'a' : 'button';
@@ -18,6 +22,8 @@ const Tag = href ? 'a' : 'button';
 
 <Tag
   href={href}
+  target={target}
+  rel={rel}
   class:list={[
     "button-base",
     `button-${variant}`,
