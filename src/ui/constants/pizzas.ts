@@ -19,7 +19,7 @@ export const pizzas: Pizza[] = [
   {
     id: 'estofado',
     name: 'Estofada',
-    description: 'Pizza estilo estofado con carne jugosa, mozzarella y especias tradicionales.',
+    description: 'Pizza estofada con carnes frías, cabano y queso mozzarella.',
     priceWhole: 88000,
     priceSlice: 5500,
     image: '/pizzas/estofado.png',
@@ -27,7 +27,7 @@ export const pizzas: Pizza[] = [
   {
     id: 'champinones',
     name: 'Pollo Champiñones',
-    description: 'Deliciosa pizza con pollo, champiñones frescos, mozzarella y un toque de ajo.',
+    description: 'Deliciosa pizza con pollo, champiñones frescos y mozzarella.',
     priceWhole: 88000,
     priceSlice: 5500,
     image: '/pizzas/champinones.png',
@@ -51,7 +51,7 @@ export const pizzas: Pizza[] = [
   {
     id: 'super-estofada',
     name: 'Super Estofada',
-    description: 'Versión mejorada de nuestra pizza estofado, con doble porción de carne y queso extra.',
+    description: 'Versión mejorada de nuestra pizza estofada, incluye chorizo cervezero, pollo desmechado, cabano, salchicha ranchera, salsas de la casa y queso mozzarella.',
     priceWhole: 112000,
     priceSlice: 7000,
     image: '/pizzas/super-estofada.png',
